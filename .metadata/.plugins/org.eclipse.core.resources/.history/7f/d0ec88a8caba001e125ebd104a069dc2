@@ -1,0 +1,34 @@
+package com.example.task.Entity;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class TaskEntity {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer taskID;
+	@Column
+	private String taskName;
+	@Column
+	private String taskDescription;
+	@Column
+	private boolean taskStatus;
+	public TaskEntity() {}
+	public TaskEntity(Integer taskId,
+					  String taskName,
+					  String taskDescription,
+					  boolean taskStatus) {
+		this.taskID = taskId;
+		this.taskName = taskName;
+		this.taskDescription = taskDescription;
+		this.taskStatus = taskStatus;
+	}
+	public Integer getTaskId() {
+		return taskID;
+	}
+	
+}
